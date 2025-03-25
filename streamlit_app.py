@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
+st.markdown(<style>.main { background - color:#f5f5f5; padding: 20px;})
+
 st.title("Border Freight - Cotizador de Rutas")
 st.write("Este cotizador esta diseñado para subir un archivo de rutas y evaluar los precios que contiene")
 
