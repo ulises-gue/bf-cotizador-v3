@@ -198,11 +198,10 @@ if uploaded_file is not None:
       st.write('<b>Utlidad de Operacion Cotizada:</b>', f"{total_profit:.2%}", unsafe_allow_html=True)
       st.write('<b>Promedio de Kilometros Mensuales:</b>', f"{avg_monthly_km:,.2f}", unsafe_allow_html=True)
       
-      per_increase = ((km_provided + avg_monthly_km) - avg_monthly_km) / avg_monthly_km
-      st.write('<b>Porcentaje de Incremento:</b>', f"{per_increase:.2%}", unsafe_allow_html=True)
-      
       km_mensual_new = km_provided + avg_monthly_km
       st.write('<b>Kilometros Mensuales + Nueva Operacion:</b>', f"{km_mensual_new:,.2f}", unsafe_allow_html=True)
+      per_increase = ((km_provided + avg_monthly_km) - avg_monthly_km) / avg_monthly_km
+      st.write('<b>Porcentaje de Incremento:</b>', f"{per_increase:.2%}", unsafe_allow_html=True)
       
       st.write('<b>KPI Mensual:</b>', f"{monthly_kpi:,.2f}", unsafe_allow_html=True)
       
