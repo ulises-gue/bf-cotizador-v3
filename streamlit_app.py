@@ -191,10 +191,10 @@ if uploaded_file is not None:
       km_provided = route_data["Distancia Mensual"].sum()
       revenue = route_data["Facturacion Mensual"].sum()
       total_costs = route_data["Costo Mensual"].sum()
-      total_profit = ((revenue - total_costs)/revenue)*100
+      total_profit = (revenue - total_costs)/revenue
       st.write("Kilometros Mensuales de Operacion Cotizada:", f"{km_provided:,.2f}")
       st.write("Facturacion Mensual de Operacion Cotizada:", f"{revenue:,.2f}")
-      st.write("Utlidad de Operacion Cotizada:", f"{total_profit:,.2f}")
+      st.write("Utlidad de Operacion Cotizada:", f"{total_profit:.2%}")
       st.write("Promedio de Kilometros Mensuales:", f"{avg_monthly_km:,.2f}")
       per_increase = ((km_provided+avg_monthly_km) - avg_monthly_km)/avg_monthly_km
       st.write("Porcentaje de Incremento:", f"{per_increase:.2%}")
