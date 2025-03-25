@@ -128,7 +128,7 @@ uploaded_file = st.file_uploader("Sube un archivo de Excel", type = ["xlsx"])
 #an error message.
 if uploaded_file is not None:
       route_data = pd.read_excel(uploaded_file, header = 1)
-      st.subheader('<h2 style="color:#c4500b;">Este es el archivo cargado</h2>', unsafe_allow_html=True)
+      st.write('<h2 style="color:#c4500b;">Este es el archivo cargado</h2>', unsafe_allow_html=True)
       st.dataframe(route_data)
       #We will format all floats with 1 decimal place and thousands separators
       pd.options.display.float_format = "{:,.1f}".format
