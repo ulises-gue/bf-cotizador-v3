@@ -8,7 +8,7 @@ st.write("Este cotizador esta diseñado para subir un archivo de rutas y evaluar
 #We will first define the varaibles we will need to evaluate the routes submitted by the user
 cost_per_km = 25.5
 avg_monthly_km = 1100000
-monthly_kpi = 1500000
+monthly_kpi = 1380189.67
 #We will create a dictionary with all the routes and their associated distances
 km = {"Aguascalientes - Chihuahua": 1310.18181818182,
 "Aguascalientes - Guanajuato": 248,
