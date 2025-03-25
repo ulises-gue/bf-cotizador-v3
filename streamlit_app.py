@@ -2,38 +2,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
-# Inject custom CSS for background and box effect
-st.markdown(
-    """
-    <style>
-    /* Light gray background */
-    .main {
-        background-color: #f5f5f5;
-        padding: 20px;
-    }
-
-    /* White square with rounded borders */
-    .box {
-        background-color: white;
-        border-radius: 20px; /* Rounded corners */
-        padding: 40px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-        margin: auto;
-        max-width: 800px; /* Set box width */
-    }
-
-    /* Center all content inside the box */
-    .box h1, .box h2, .box p, .box .stButton {
-        text-align: center;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
-# Open the "box" div
-st.markdown('<div class="box">', unsafe_allow_html=True)
-
 st.title("Border Freight - Cotizador de Rutas")
 st.write("Este cotizador esta diseñado para subir un archivo de rutas y evaluar los precios que contiene")
 
