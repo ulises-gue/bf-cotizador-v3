@@ -209,6 +209,10 @@ if uploaded_file is not None and uploaded_file2 is not None:
       
       difference = km_mensual_new - monthly_kpi
       st.write('<b>Diferencia:</b>', f"{difference:,.2f}", unsafe_allow_html=True)
+
+      st.write("---")
+      st.write('<h2 style="color:#c4500b;">Comparativa con Cotizacion Original:</h2>', unsafe_allow_html=True)
+
 else:
       st.warning("Por favor sube un archivo de Excel para continuar")
       
