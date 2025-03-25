@@ -128,7 +128,7 @@ uploaded_file = st.file_uploader("Sube un archivo de Excel", type = ["xlsx"])
 #an error message.
 if uploaded_file is not None:
       route_data = pd.read_excel(uploaded_file, header = 1)
-      st.write('<h2 style="color:#c4500b;">Este es el archivo cargado</h2>', unsafe_allow_html=True)
+      st.write('<h2 style="color:#c4500b;">Archivo cargado:</h2>', unsafe_allow_html=True)
       st.dataframe(route_data)
       #We will format all floats with 1 decimal place and thousands separators
       pd.options.display.float_format = "{:,.1f}".format
@@ -179,11 +179,11 @@ if uploaded_file is not None:
       
       #We will display the program outputs
       st.write("---")
-      st.subheader("Evaluacion de Rutas:")
+      st.write('<h2 style="color:#c4500b;">Evaluacion de Rutas:</h2>', unsafe_allow_html=True)
       st.dataframe(route_data_new)
 
       st.write("---")
-      st.subheader("Evaluacion de Operacion:")
+      st.write('<h2 style="color:#c4500b;">Evaluacion de Operacion:</h2>', unsafe_allow_html=True)
       km_provided = route_data["Distancia Mensual"].sum()
       st.write("Kilometros Mensuales de Operacion Cotizada:", f"{km_provided:,.2f}")
       st.write("Promedio de Kilometros Mensuales:", f"{avg_monthly_km:,.2f}")
