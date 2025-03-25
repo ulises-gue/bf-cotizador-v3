@@ -179,11 +179,11 @@ if uploaded_file is not None:
       
       #We will display the program outputs
       st.write("---")
-      st.write("Evaluacion de Rutas:")
+      st.subheader("Evaluacion de Rutas:")
       st.dataframe(route_data_new)
 
       st.write("---")
-      st.write("Evaluacion de Operacion:")
+      st.subheader("Evaluacion de Operacion:")
       km_provided = route_data["Distancia Mensual"].sum()
       st.write("Kilometros Mensuales de Operacion Cotizada:", f"{km_provided:,.2f}")
       st.write("Promedio de Kilometros Mensuales:", f"{avg_monthly_km:,.2f}")
