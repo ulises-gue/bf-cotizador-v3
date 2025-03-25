@@ -123,9 +123,7 @@ km = {"Aguascalientes - Chihuahua": 1310.18181818182,
 
 #We will prompt the user to upload a file
 uploaded_file = st.file_uploader("Sube la contrapropuesta del cliente:", type = ["xlsx"], key = "file1")
-uploaded_file2 = st.file_uploader("Sube la cotizacion original:", type = ["xlsx"], key = "file2")
-
-pd.options.display.float_format = '{:,.1f}'.format 
+uploaded_file2 = st.file_uploader("Sube la cotizacion original:", type = ["xlsx"], key = "file2") 
 
 #The application will run the program only if the user uploadas a file, otherwise it will display
 #an error message.
@@ -135,6 +133,7 @@ if uploaded_file is not None and uploaded_file2 is not None:
       st.write('<h2 style="color:#c4500b;">Archivo cargado:</h2>', unsafe_allow_html=True)
       st.dataframe(route_data)
       #We will format all floats with 1 decimal place and thousands separators
+      pd.options.display.float_format = '{:,.1f}'.format
       
       #We will format the price column to a float to perform calculations with it
       route_data["Precio"] = route_data["Precio"].astype(float)
