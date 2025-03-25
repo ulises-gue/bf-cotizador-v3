@@ -146,8 +146,8 @@ if uploaded_file is not None and uploaded_file2 is not None:
       #can't find it in the route dictionary, it will prompt the user to input the distance manually 
       route_data["Distancia"] = route_data["Ruta"].map(km)
       for i in route_data.index[route_data["Distancia"].isnull()]:
-        km_input = float(input(f"Ingresa el kilometraje de la ruta {route_data.loc[i,'Ruta']}:"))
-        route_data.loc[i,"Distancia"] = km_input
+          km_input = st.number_input(f"Ingresa el kilometraje de la ruta {route_data.loc[i,'Ruta']}:")
+          route_data.loc[i, "Distancia"] = km_input
 
       #We will create a column named Precio por Km
       route_data["Precio por KM"] = route_data["Precio"] / route_data["Distancia"]
