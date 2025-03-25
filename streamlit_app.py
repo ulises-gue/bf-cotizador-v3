@@ -212,7 +212,22 @@ if uploaded_file is not None and uploaded_file2 is not None:
 
       st.write("---")
       st.write('<h2 style="color:#c4500b;">Comparativa con Cotizacion Original:</h2>', unsafe_allow_html=True)
+      #We will create a column named route that will merge the origin and destination columns with a dash
+      quote["Ruta"] = quote["Origen"] + " - " + quote["Destino"]
+      
+      #We will merge the route_data and quote data frames on the route column
+      compare = pd.merge(route_data, quote, on = "Ruta")
 
+      #We will create two columns to see the difference between the price we quoted initally and the 
+      #client's response
+      compare["Diferencia"] = compare["Precio_x"] - compare["Precio_y"]
+      compare["Diferencia %"] = ((compare["Precio_x"] - compare["Precio_y"])/compare["Precio_y"])*100
+
+      #We will create a new data frame to display the comparisson 
+      compare_new = pd.DataFrame(compare, columns = ["Ruta", "Precio_x", "Precio_y", "Diferencia", "Diferencia %"])
+      compare_new.rename(columns={"Precio_x": "Precio Cliente", "Precio_y": "Precio Cotizacion"}, inplace=True)
+      st.dataframe(compare_new)
+      
 else:
       st.warning("Por favor sube un archivo de Excel para continuar")
       
