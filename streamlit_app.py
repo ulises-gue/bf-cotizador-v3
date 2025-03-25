@@ -146,7 +146,10 @@ if uploaded_file is not None and uploaded_file2 is not None:
       #can't find it in the route dictionary, it will prompt the user to input the distance manually 
       route_data["Distancia"] = route_data["Ruta"].map(km)
       for i in route_data.index[route_data["Distancia"].isnull()]:
-          km_input = st.number_input(f"Ingresa el kilometraje de la ruta {route_data.loc[i,'Ruta']}:")
+          km_input = st.number_input(
+              f"Ingresa el kilometraje de la ruta {route_data.loc[i, 'Ruta']}:",
+              key=f"km_input_{i}"  # Adding a unique key for each input field
+          )
           route_data.loc[i, "Distancia"] = km_input
 
       #We will create a column named Precio por Km
