@@ -135,7 +135,7 @@ if uploaded_file is not None and uploaded_file2 is not None:
       
       #We will format the price column to a float to perform calculations with it
       route_data["Precio"] = route_data["Precio"].astype(float)
-      
+
       #We will fill any null values in the frequency column with a 1
       route_data["Frequencia (Mensual)"] = route_data["Frequencia (Mensual)"].fillna(1)
     
@@ -181,7 +181,7 @@ if uploaded_file is not None and uploaded_file2 is not None:
       route_data["Costo Mensual"] = route_data["Distancia Mensual"] * cost_per_km
 
       #We will create a new data frame to display
-      route_data_new = pd.DataFrame(route_data, columns = ["Ruta", "Tipo de Ruta", "Sentido", "Distancia", "Precio", "Precio por KM", "Utilidad (%)", "Evaluacion"])
+      route_data_new = pd.DataFrame(route_data, columns = ["Ruta", "Tipo de Ruta", "Frequencia (Mensual)", "Sentido", "Distancia", "Precio", "Precio por KM", "Utilidad (%)", "Evaluacion"])
       route_data_new["Distancia"] = route_data_new["Distancia"].apply(lambda x: f"{x:,.2f}")
       route_data_new["Precio"] = route_data_new["Precio"].apply(lambda x: f"{x:,.2f}")
       route_data_new["Precio por KM"] = route_data_new["Precio por KM"].apply(lambda x: f"{x:,.2f}")
