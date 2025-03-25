@@ -24,7 +24,7 @@ st.markdown(
 )
 
 # Open the "box" div with rounded borders and shadow
-st.markdown('<div class="box">', unsafe_allow_html=True
+st.markdown('<div class="box">', unsafe_allow_html=True)
 
 st.title("Border Freight - Cotizador de Rutas")
 st.write("Este cotizador esta diseñado para subir un archivo de rutas y evaluar los precios que contiene")
