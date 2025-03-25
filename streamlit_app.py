@@ -133,7 +133,6 @@ if uploaded_file is not None and uploaded_file2 is not None:
       st.write('<h2 style="color:#c4500b;">Archivo cargado:</h2>', unsafe_allow_html=True)
       st.dataframe(route_data)
       #We will format all floats with 1 decimal place and thousands separators
-      pd.options.display.float_format = '{:,.1f}'.format 
       
       #We will format the price column to a float to perform calculations with it
       route_data["Precio"] = route_data["Precio"].astype(float)
@@ -227,8 +226,6 @@ if uploaded_file is not None and uploaded_file2 is not None:
       #We will create a new data frame to display the comparisson 
       compare_new = pd.DataFrame(compare, columns = ["Ruta", "Precio_x", "Precio_y", "Diferencia", "Diferencia %"])
       compare_new.rename(columns={"Precio_x": "Precio Cliente", "Precio_y": "Precio Cotizacion"}, inplace=True)
-      compare_new["Precio Cliente"] = compare_new["Precio Cliente"].apply(lambda x: f"{x:,.1f}" if isinstance(x, float) else x)
-      compare_new["Precio Cotizacion"] = compare_new["Precio Cotizacion"].apply(lambda x: f"{x:,.1f}" if isinstance(x, float) else x)
       st.dataframe(compare_new)
 else:
       st.warning("Por favor sube un archivo de Excel para continuar")
