@@ -163,6 +163,8 @@ if uploaded_file is not None and uploaded_file2 is not None:
     
       #We will create a column that will calculate the profit margin per route
       route_data["Utilidad (%)"] = ((route_data["Precio"] - (route_data["Distancia"] * cost_per_km))/route_data["Precio"])*100
+      route_data["Utilidad (%)"] = route_data["Utilidad (%)"]. round(2)
+      
     
       #We will create a column that will determine route acceptance based on profit theresholds per route type
       #and direction.
@@ -230,6 +232,7 @@ if uploaded_file is not None and uploaded_file2 is not None:
       compare_new.rename(columns={"Precio_x": "Precio Cliente", "Precio_y": "Precio Cotizacion"}, inplace=True)
       compare_new["Precio Cliente"] = compare_new["Precio Cliente"].apply(lambda x: f"{x:,.2f}")
       compare_new["Precio Cotizacion"] = compare_new["Precio Cotizacion"].apply(lambda x: f"{x:,.2f}")
+      compare_new["Diferencia"] = compare_new["Diferencia"].apply(lambda x: f"{x:,.2f}")
       st.dataframe(compare_new)
 else:
       st.warning("Por favor sube un archivo de Excel para continuar")
