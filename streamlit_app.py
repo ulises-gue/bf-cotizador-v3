@@ -183,7 +183,6 @@ if uploaded_file is not None and uploaded_file2 is not None:
       route_data_new["Distancia"] = route_data_new["Distancia"].apply(lambda x: f"{x:,.2f}")
       route_data_new["Precio"] = route_data_new["Precio"].apply(lambda x: f"{x:,.2f}")
       route_data_new["Precio por KM"] = route_data_new["Precio por KM"].apply(lambda x: f"{x:,.2f}")
-      route_data_new["Utilidad (%)"] = route_data_new["Precio por KM"].apply(lambda x: f"{x:,.2f}")
       
       #We will display the program outputs
       st.write("---")
