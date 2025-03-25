@@ -230,7 +230,6 @@ if uploaded_file is not None and uploaded_file2 is not None:
       compare_new["Precio Cliente"] = compare_new["Precio Cliente"].apply(lambda x: f"{x:,.1f}" if isinstance(x, float) else x)
       compare_new["Precio Cotizacion"] = compare_new["Precio Cotizacion"].apply(lambda x: f"{x:,.1f}" if isinstance(x, float) else x)
       st.dataframe(compare_new)
-      
 else:
       st.warning("Por favor sube un archivo de Excel para continuar")
       
