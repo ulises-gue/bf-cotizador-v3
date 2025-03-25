@@ -122,8 +122,8 @@ km = {"Aguascalientes - Chihuahua": 1310.18181818182,
 "San Luis Potosi - Tlaxcala": 510.6}
 
 #We will prompt the user to upload a file
-uploaded_file = st.file_uploader("Sube la contrapropuesta del cliente", type = ["xlsx"], key = "file1")
-uploaded_file2 = st.file_uploader("Sube la cotizacion original", type = ["xlsx"], key = "file2")
+uploaded_file = st.file_uploader("Sube la contrapropuesta del cliente:", type = ["xlsx"], key = "file1")
+uploaded_file2 = st.file_uploader("Sube la cotizacion original:", type = ["xlsx"], key = "file2")
 
 #The application will run the program only if the user uploadas a file, otherwise it will display
 #an error message.
