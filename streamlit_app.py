@@ -123,11 +123,13 @@ km = {"Aguascalientes - Chihuahua": 1310.18181818182,
 
 #We will prompt the user to upload a file
 uploaded_file = st.file_uploader("Sube un archivo de Excel", type = ["xlsx"])
+uploaded_file2 = st.file_uploader("Sube un archivo de Excel", type = ["xlsx"])
 
 #The application will run the program only if the user uploadas a file, otherwise it will display
 #an error message.
-if uploaded_file is not None:
+if uploaded_file is not None & uploaded_file2 is not None:
       route_data = pd.read_excel(uploaded_file, header = 1)
+      quote = pd.read_excel(uploaded_file2, header = 1)
       st.write('<h2 style="color:#c4500b;">Archivo cargado:</h2>', unsafe_allow_html=True)
       st.dataframe(route_data)
       #We will format all floats with 1 decimal place and thousands separators
