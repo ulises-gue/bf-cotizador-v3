@@ -173,6 +173,10 @@ if uploaded_file is not None:
     
       #We will create a column called monthly distance that will multiply the monthly frequency by the route distance
       route_data["Distancia Mensual"] = route_data["Distancia"] * route_data["Frequencia (Mensual)"]
+      #We will create a column called monthly invoicing 
+      route_data["Facturacion Mensual"] = route_data["Precio"] * route_data["Frequencia (Mensual)"]
+      #We will create a column called monthly costs
+      route_data["Costo Mensual"] = route_data["Distancia Mensual"] * cost_per_km
 
       #We will create a new data frame to display
       route_data_new = pd.DataFrame(route_data, columns = ["Ruta", "Tipo de Ruta", "Sentido", "Distancia", "Precio", "Precio por KM", "Utilidad (%)", "Evaluacion"])
@@ -185,7 +189,12 @@ if uploaded_file is not None:
       st.write("---")
       st.write('<h2 style="color:#c4500b;">Evaluacion de Operacion:</h2>', unsafe_allow_html=True)
       km_provided = route_data["Distancia Mensual"].sum()
+      revenue = route_data["Facturacion Mensual"].sum()
+      total_costs = route_data["Costo Mensual"].sum()
+      total_profit = (revenue - total_costs)/revenue
       st.write("Kilometros Mensuales de Operacion Cotizada:", f"{km_provided:,.2f}")
+      st.write("Facturacion Mensual de Operacion Cotizada:", f"{revenue:,.2f}")
+      st.write("Utlidad de Operacion Cotizada:", f"{total_profit:,.2f}")
       st.write("Promedio de Kilometros Mensuales:", f"{avg_monthly_km:,.2f}")
       per_increase = ((km_provided+avg_monthly_km) - avg_monthly_km)/avg_monthly_km
       st.write("Porcentaje de Incremento:", f"{per_increase:.2%}")
