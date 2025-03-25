@@ -180,10 +180,6 @@ if uploaded_file is not None and uploaded_file2 is not None:
 
       #We will create a new data frame to display
       route_data_new = pd.DataFrame(route_data, columns = ["Ruta", "Tipo de Ruta", "Sentido", "Distancia", "Precio", "Precio por KM", "Utilidad (%)", "Evaluacion"])
-      st.dataframe(route_data_new.style.format({"Distancia": "{:,.1f}"}))
-      st.dataframe(route_data_new.style.format({"Precio": "{:,.1f}"}))
-      st.dataframe(route_data_new.style.format({"Precio por KM": "{:,.1f}"}))
-      st.dataframe(route_data_new.style.format({"Utilidad (%)": "{:,.1f}"}))
 
       #We will display the program outputs
       st.write("---")
