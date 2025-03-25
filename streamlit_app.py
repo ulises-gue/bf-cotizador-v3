@@ -166,10 +166,10 @@ if uploaded_file is not None:
     
       #We will create a column that will determine route acceptance based on profit theresholds per route type
       #and direction.
-      route_data["Evaluacion"] = np.where(((route_data["Tipo de Ruta"] == "Tramo Corto") & (route_data["Sentido"]  == "Retorno") & (route_data["Utlidad (%)"] >= 36)), "Si",
-                                        np.where(((route_data["Tipo de Ruta"] == "Tramo Corto") & (route_data["Sentido"] == "Salida") & (route_data["Utlidad (%)"] >= 49)), "Si",
-                                                 np.where(((route_data["Tipo de Ruta"] == "Tramo Largo") & (route_data["Sentido"] == "Salida") & (route_data["Utlidad (%)"] >= 15)), "Si",
-                                                          np.where(((route_data["Tipo de Ruta"] == "Tramo Largo") & (route_data["Sentido"] == "Retorno") & (route_data["Utlidad (%)"] >= 33)), "Si", "No"))))
+      route_data["Evaluacion"] = np.where(((route_data["Tipo de Ruta"] == "Tramo Corto") & (route_data["Sentido"]  == "Retorno") & (route_data["Utilidad (%)"] >= 36)), "Si",
+                                        np.where(((route_data["Tipo de Ruta"] == "Tramo Corto") & (route_data["Sentido"] == "Salida") & (route_data["Utilidad (%)"] >= 49)), "Si",
+                                                 np.where(((route_data["Tipo de Ruta"] == "Tramo Largo") & (route_data["Sentido"] == "Salida") & (route_data["Utilidad (%)"] >= 15)), "Si",
+                                                          np.where(((route_data["Tipo de Ruta"] == "Tramo Largo") & (route_data["Sentido"] == "Retorno") & (route_data["Utilidad (%)"] >= 33)), "Si", "No"))))
     
       #We will create a column called monthly distance that will multiply the monthly frequency by the route distance
       route_data["Distancia Mensual"] = route_data["Distancia"] * route_data["Frequencia (Mensual)"]
