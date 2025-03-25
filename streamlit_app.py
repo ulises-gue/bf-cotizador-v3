@@ -192,7 +192,7 @@ if uploaded_file is not None:
       km_mensual_new = km_provided + avg_monthly_km
       st.write("Kilometros Mensuales + Nueva Operacion:", f"{km_mensual_new:,.2f}")
       st.write("KPI Mensual:", f"{monthly_kpi:,.2f}")
-      difference = km_mensual_new - monthly_KPI
+      difference = km_mensual_new - monthly_kpi
       st.write("Diferencia:", f"{difference:,.2f}")
 else:
       st.warning("Por favor sube un archivo de Excel para continuar")
