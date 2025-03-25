@@ -162,7 +162,7 @@ if uploaded_file is not None:
                                      np.where((route_data["Tipo de Ruta"] == "Tramo Corto") & (route_data["Origen"] == "Reynosa"), "Salida", "Retorno"))
     
       #We will create a column that will calculate the profit margin per route
-      route_data["Utlidad (%)"] = ((route_data["Precio"] - (route_data["Distancia"] * cost_per_km))/route_data["Precio"])*100
+      route_data["Utilidad (%)"] = ((route_data["Precio"] - (route_data["Distancia"] * cost_per_km))/route_data["Precio"])*100
     
       #We will create a column that will determine route acceptance based on profit theresholds per route type
       #and direction.
