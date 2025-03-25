@@ -31,8 +31,8 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# Apply the "box" class to the main container
-st.markdown('<div class="box">', unsafe_allow_html=True
+# Open the "box" div
+st.markdown('<div class="box">', unsafe_allow_html=True)
 
 st.title("Border Freight - Cotizador de Rutas")
 st.write("Este cotizador esta diseñado para subir un archivo de rutas y evaluar los precios que contiene")
