@@ -191,18 +191,23 @@ if uploaded_file is not None:
       km_provided = route_data["Distancia Mensual"].sum()
       revenue = route_data["Facturacion Mensual"].sum()
       total_costs = route_data["Costo Mensual"].sum()
-      total_profit = (revenue - total_costs)/revenue
-      st.write("Kilometros Mensuales de Operacion Cotizada:", f"{km_provided:,.2f}")
-      st.write("Facturacion Mensual de Operacion Cotizada:", f"{revenue:,.2f}")
-      st.write("Utlidad de Operacion Cotizada:", f"{total_profit:.2%}")
-      st.write("Promedio de Kilometros Mensuales:", f"{avg_monthly_km:,.2f}")
-      per_increase = ((km_provided+avg_monthly_km) - avg_monthly_km)/avg_monthly_km
-      st.write("Porcentaje de Incremento:", f"{per_increase:.2%}")
+      total_profit = (revenue - total_costs) / revenue
+      
+      st.write('<b>Kilometros Mensuales de Operacion Cotizada:</b>', f"{km_provided:,.2f}", unsafe_allow_html=True)
+      st.write('<b>Facturacion Mensual de Operacion Cotizada:</b>', f"{revenue:,.2f}", unsafe_allow_html=True)
+      st.write('<b>Utlidad de Operacion Cotizada:</b>', f"{total_profit:.2%}", unsafe_allow_html=True)
+      st.write('<b>Promedio de Kilometros Mensuales:</b>', f"{avg_monthly_km:,.2f}", unsafe_allow_html=True)
+      
+      per_increase = ((km_provided + avg_monthly_km) - avg_monthly_km) / avg_monthly_km
+      st.write('<b>Porcentaje de Incremento:</b>', f"{per_increase:.2%}", unsafe_allow_html=True)
+      
       km_mensual_new = km_provided + avg_monthly_km
-      st.write("Kilometros Mensuales + Nueva Operacion:", f"{km_mensual_new:,.2f}")
-      st.write("KPI Mensual:", f"{monthly_kpi:,.2f}")
+      st.write('<b>Kilometros Mensuales + Nueva Operacion:</b>', f"{km_mensual_new:,.2f}", unsafe_allow_html=True)
+      
+      st.write('<b>KPI Mensual:</b>', f"{monthly_kpi:,.2f}", unsafe_allow_html=True)
+      
       difference = km_mensual_new - monthly_kpi
-      st.write("Diferencia:", f"{difference:,.2f}")
+      st.write('<b>Diferencia:</b>', f"{difference:,.2f}", unsafe_allow_html=True)
 else:
       st.warning("Por favor sube un archivo de Excel para continuar")
       
