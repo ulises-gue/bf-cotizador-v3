@@ -222,7 +222,7 @@ if uploaded_file is not None and uploaded_file2 is not None:
       #client's response
       compare["Diferencia"] = compare["Precio_x"] - compare["Precio_y"]
       compare["Diferencia %"] = ((compare["Precio_x"] - compare["Precio_y"])/compare["Precio_y"])*100
-      compare["Diferencia %"] = compare["Diferencia %"].astype(float)
+      compare["Diferencia %"] = compare["Diferencia %"].round(2)
 
       #We will create a new data frame to display the comparisson 
       compare_new = pd.DataFrame(compare, columns = ["Ruta", "Precio_x", "Precio_y", "Diferencia", "Diferencia %"])
