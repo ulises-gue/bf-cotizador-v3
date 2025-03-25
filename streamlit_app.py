@@ -132,8 +132,6 @@ if uploaded_file is not None and uploaded_file2 is not None:
       quote = pd.read_excel(uploaded_file2, header = 1)
       st.write('<h2 style="color:#c4500b;">Archivo cargado:</h2>', unsafe_allow_html=True)
       st.dataframe(route_data)
-      #We will format all floats with 1 decimal place and thousands separators
-      pd.options.display.float_format = '{:,.1f}'.format
       
       #We will format the price column to a float to perform calculations with it
       route_data["Precio"] = route_data["Precio"].astype(float)
@@ -182,7 +180,11 @@ if uploaded_file is not None and uploaded_file2 is not None:
 
       #We will create a new data frame to display
       route_data_new = pd.DataFrame(route_data, columns = ["Ruta", "Tipo de Ruta", "Sentido", "Distancia", "Precio", "Precio por KM", "Utilidad (%)", "Evaluacion"])
-      
+      st.dataframe(route_data_new.style.format({"Distancia": "{:,.1f}"}))
+      st.dataframe(route_data_new.style.format({"Precio": "{:,.1f}"}))
+      st.dataframe(route_data_new.style.format({"Precio por KM": "{:,.1f}"}))
+      st.dataframe(route_data_new.style.format({"Utilidad (%)": "{:,.1f}"}))
+
       #We will display the program outputs
       st.write("---")
       st.write('<h2 style="color:#c4500b;">Evaluacion de Rutas:</h2>', unsafe_allow_html=True)
